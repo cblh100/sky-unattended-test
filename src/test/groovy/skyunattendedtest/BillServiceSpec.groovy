@@ -51,12 +51,12 @@ class BillServiceSpec extends Specification {
         def service = Spy(BillService)
 
         when:
-        def result = service.fetchBill( DUMMY_URL )
+        def result = service.fetchBill(DUMMY_URL)
 
         then: 'The returned parsed json matches the mocked json'
         new JsonSlurper().parseText(DUMMY_BILL) == result
         and: 'The call service method should be passed the correct URL and only be called once'
-        1 * service.callService( _ ) >> { String url ->
+        1 * service.callService(_) >> { String url ->
             assert DUMMY_URL == url
             DUMMY_BILL
         }
