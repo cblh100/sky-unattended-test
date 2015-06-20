@@ -1,14 +1,14 @@
 package skyunattendedtest
 
+import grails.test.mixin.TestFor
 import groovy.json.JsonSlurper
 import spock.lang.Specification
 
 /**
- * Unit tests for the {@link BillService}
+ * Unit tests for the {@link BillController}
  */
-class BillServiceSpec extends Specification {
-
-  private static final String DUMMY_URL = 'http://dummy/bill.json'
+@TestFor(BillController)
+class BillControllerSpec extends Specification {
 
   private static final String DUMMY_BILL = '''
 {
@@ -49,20 +49,18 @@ class BillServiceSpec extends Specification {
 }
             '''
 
-  void "Test that the bill service calls the correct url and a returns successfully"() {
+  void 'Test index returns correct model'() {
     given:
-    def service = Spy(BillService)
-
-    when:
-    def result = service.fetchBill(DUMMY_URL)
-
-    then: 'The returned parsed json matches the mocked json'
-    new JsonSlurper().parseText(DUMMY_BILL) == result
-    and: 'The call service method should be passed the correct URL and only be called once'
-    1 * service.callService(_) >> { String url ->
-      assert DUMMY_URL == url
-      DUMMY_BILL
+    controller.billService = Mock(BillService) {
+      fetchBill(_) >> { String url ->
+        new JsonSlurper().parseText( DUMMY_BILL )
+      }
     }
+    when:
+    def result = controller.index()
+
+    then:
+    result.bill == new JsonSlurper().parseText( DUMMY_BILL )
 
   }
 }
