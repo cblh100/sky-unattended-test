@@ -16,7 +16,7 @@ Once GVM is installed, start a new terminal window and run: `gvm install grails`
 
 You should now have a functioning Grail installation.
 
-Next grab the source from BitBucket:  `git clone https://bitbucket.org/underachiever/skyunattendedtest.git`
+Next grab the source from BitBucket: `git clone https://bitbucket.org/underachiever/skyunattendedtest.git`
 
 Navigate to the skyunattendedtest directory, here you have 2 options:
 
