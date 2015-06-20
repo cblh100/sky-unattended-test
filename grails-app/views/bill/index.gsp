@@ -26,13 +26,13 @@
     </div>
     <div class="row">
       <div class="col-xs-4">
-        ${bill.statement.period.from} - ${bill.statement.period.to}
+        <sky:formatBillDate date="${bill.statement.period.from}"/> - <sky:formatBillDate date="${bill.statement.period.to}"/>
       </div>
       <div class="col-xs-4">
-        ${bill.statement.due}
+        <sky:formatBillDate date="${bill.statement.due}"/>
       </div>
       <div class="col-xs-4">
-        ${bill.statement.generated}
+        <sky:formatBillDate date="${bill.statement.generated}"/>
       </div>
     </div>
   </div>
