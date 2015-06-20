@@ -19,5 +19,7 @@ You should now have a functioning Grail installation.
 Next grab the source from BitBucket:  `git clone https://bitbucket.org/underachiever/skyunattendedtest.git`
 
 Navigate to the skyunattendedtest directory, here you have 2 options:
+
 * Running the application: `grails run-app`, the application is accessible at [http://localhost:8080/](http://localhost:8080/)
+
 * Testing the application: `grails test-app`
