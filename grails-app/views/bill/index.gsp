@@ -49,7 +49,7 @@
         <h4>Total</h4>
       </div>
       <div class="col-xs-3">
-        <h4>£${bill.total}</h4>
+        <h4><g:formatNumber number="${bill.total}" type="currency" currencySymbol="£"/></h4>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@
         </h3>
       </div>
       <div class="col-xs-3"><h3 class="panel-title"><g:formatNumber number="${bill.callCharges.total}" type="currency"
-                                                                    currencyCode="GBP"/></h3></div>
+                                                                    currencySymbol="£"/></h3></div>
     </div>
   </div>
 
