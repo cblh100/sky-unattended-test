@@ -7,8 +7,7 @@
                   class="glyphicon glyphicon-menu-hamburger"></span> Calls</a>
         </h3>
       </div>
-      <div class="col-xs-3"><h3 class="panel-title"><g:formatNumber number="${bill.callCharges.total}" type="currency"
-                                                                    currencySymbol="£"/></h3></div>
+      <div class="col-xs-3"><h3 class="panel-title"><sky:formatAmount amount="${bill.callCharges.total}"/></h3></div>
     </div>
   </div>
 
@@ -23,8 +22,7 @@
         <div class="row">
           <div class="col-xs-4">${callCharge.called}</div>
           <div class="col-xs-5">${callCharge.duration}</div>
-          <div class="col-xs-3"><g:formatNumber number="${callCharge.cost}" type="currency"
-                                                currencyCode="GBP"/></div>
+          <div class="col-xs-3"><sky:formatAmount amount="${callCharge.cost}"/></div>
         </div>
       </g:each>
     </div>

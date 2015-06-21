@@ -8,8 +8,7 @@
         </h3>
       </div>
 
-      <div class="col-xs-3"><h3 class="panel-title"><g:formatNumber number="${bill.skyStore.total}" type="currency"
-                                                                    currencySymbol="£"/></h3></div>
+      <div class="col-xs-3"><h3 class="panel-title"><sky:formatAmount amount="${bill.skyStore.total}"/></h3></div>
     </div>
   </div>
 
@@ -20,8 +19,8 @@
       <g:each in="${bill.skyStore.rentals}" var="item">
         <div class="row">
           <div class="col-xs-9">${item.title}</div>
-          <div class="col-xs-3"><g:formatNumber number="${item.cost}" type="currency"
-                                                currencyCode="GBP"/></div>
+
+          <div class="col-xs-3"><sky:formatAmount amount="${item.cost}"/></div>
         </div>
       </g:each>
 
@@ -30,8 +29,8 @@
       <g:each in="${bill.skyStore.buyAndKeep}" var="item">
         <div class="row">
           <div class="col-xs-9">${item.title}</div>
-          <div class="col-xs-3"><g:formatNumber number="${item.cost}" type="currency"
-                                                currencyCode="GBP"/></div>
+
+          <div class="col-xs-3"><sky:formatAmount amount="${item.cost}"/></div>
         </div>
       </g:each>
     </div>

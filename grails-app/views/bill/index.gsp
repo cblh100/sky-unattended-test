@@ -26,13 +26,13 @@
     </div>
     <div class="row">
       <div class="col-xs-4">
-        <sky:formatBillDate date="${bill.statement.period.from}"/> - <sky:formatBillDate date="${bill.statement.period.to}"/>
+        <sky:formatDate date="${bill.statement.period.from}"/> - <sky:formatDate date="${bill.statement.period.to}"/>
       </div>
       <div class="col-xs-4">
-        <sky:formatBillDate date="${bill.statement.due}"/>
+        <sky:formatDate date="${bill.statement.due}"/>
       </div>
       <div class="col-xs-4">
-        <sky:formatBillDate date="${bill.statement.generated}"/>
+        <sky:formatDate date="${bill.statement.generated}"/>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
         <h4>Total</h4>
       </div>
       <div class="col-xs-3">
-        <h4><g:formatNumber number="${bill.total}" type="currency" currencySymbol="£"/></h4>
+        <h4><sky:formatAmount amount="${bill.total}"/></h4>
       </div>
     </div>
   </div>
